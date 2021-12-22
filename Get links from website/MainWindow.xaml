@@ -1,0 +1,57 @@
+﻿<Window x:Class="Get_links_from_website.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Get_links_from_website"
+        xmlns:cefSharp="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
+        mc:Ignorable="d"
+        Title="Get links from website" Height="450" Width="800" Background="Bisque" Icon="/Link.png">
+    <DockPanel>
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid x:Name="LeftGrid" Grid.Column="0">
+
+                <Grid>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="8*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBox x:Name="URL_TextBox" Grid.Column="0" Margin="2" Foreground="Black" FontSize="25" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"></TextBox>
+                        <Button x:Name="GetLink_Button" Grid.Column="1" Margin="5" Foreground="Black" Content="Get Link" FontSize="20" Background="YellowGreen" Click="GetLink_Button_Click"></Button>
+                    </Grid>
+
+                    <Grid Grid.Row="1" x:Name="TreeviewGrid">
+                     
+                    </Grid>
+
+                </Grid>
+                
+            </Grid>
+
+            <Grid x:Name="BrowserGrid" Grid.Column="1">
+                
+             
+               <cefSharp:ChromiumWebBrowser x:Name="ChromiumBrowser" Margin="5"></cefSharp:ChromiumWebBrowser>
+
+           
+                
+            </Grid>
+            
+        </Grid>
+    </DockPanel>
+</Window>
